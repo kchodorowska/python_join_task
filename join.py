@@ -8,9 +8,11 @@ def join(a, b, c, d):
 
 
 def change_type(file, col):
-    if file[col].max() < 128 and file[col].min() > -129:
+    max_value = file[col].max()
+    min_value = file[col].min()
+    if max_value < 128 and min_value > -129:
         file[col] = file[col].astype("int8")
-    if file[col].max() < 32768 and file[col].min() > -32769:
+    if max_value < 32768 and min_value > -32769:
         file[col] = file[col].astype("int16")
 
 
