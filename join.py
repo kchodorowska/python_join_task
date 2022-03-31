@@ -3,8 +3,8 @@ import pandas
 import os
 
 
-def join(a, b, c, d):
-    return a.merge(b, on=[c], how=d)
+def join(csv_file_path1, csv_file_path2, col_name, join_type):
+    return csv_file_path1.merge(csv_file_path2, on=[col_name], how=join_type)
 
 
 def change_type(file, col):
